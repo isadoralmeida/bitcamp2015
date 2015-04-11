@@ -15,6 +15,7 @@ Create Table ReportedCrimes(
 	reportdatetime varchar(45),
 	shift varchar(45),
 	offense varchar(45),
+	method varchar(45),
 	lastmodifieddate varchar(45),
 	blocksiteaddress varchar(45),
 	businessimprovementdistrict varchar(45),
