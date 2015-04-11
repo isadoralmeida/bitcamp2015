@@ -1,0 +1,30 @@
+Create Table CrimeLocation(
+	neighborhoodcluster int,
+	destrict varchar(45),
+	block_group varchar(45),
+	ward varchar(45),
+	ReportedCrimes_ccn int,
+	anc Varchar(45),
+	blockxcoord	int,
+	blockycoord	int,
+	Primary Key (blockxcoord,blockycoord)
+);
+
+Create Table ReportedCrimes(
+	ccn int Not Null,
+	reportdatetime varchar(45),
+	shift varchar(45),
+	offense varchar(45),
+	lastmodifieddate varchar(45),
+	blocksiteaddress varchar(45),
+	businessimprovementdistrict varchar(45),
+	blockxcoord	int not NULL,
+	blockycoord	int not NULL,
+	psa int,
+	census_track int,
+	voting_precint varchar(45),
+	start_date varchar(45),
+	end_date	varchar(45),
+	Primary Key (ccn),
+    Foreign Key (blockxcoord,blockycoord) references CrimeLocation(blockxcoord,blockycoord)
+);
